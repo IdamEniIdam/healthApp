@@ -22,7 +22,7 @@ const registers = (data, navigate, setLoadingStatus) => async (dispatch) => {
 
   try {
     const response = await Axios.post(
-      `http://127.0.0.1:8000/api/users/register`,
+      `${process.env.REACT_APP_BASE_URL}/api/users/register`,
       {
         email: data.email,
         password: data.password,
@@ -55,7 +55,7 @@ const registers = (data, navigate, setLoadingStatus) => async (dispatch) => {
     };
     try {
       const res = await Axios.post(
-        `http://127.0.0.1:8000/api/users/login`,
+        `${process.env.REACT_APP_BASE_URL}/api/users/login`,
         values,
         config
       );
@@ -88,7 +88,7 @@ const registers = (data, navigate, setLoadingStatus) => async (dispatch) => {
         },
       };
       const res = await Axios.get(
-        `http://127.0.0.1:8000/api/users/logout`,
+        `${process.env.REACT_APP_BASE_URL}/api/users/logout`,
         {},
         config
       );
